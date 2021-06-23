@@ -28,9 +28,9 @@ const Home = () => {
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div className='col-md' >
-                        <div className="card bg-dark text-light">
+                            <div className="card bg-primary text-light">
                                 <div className="card-body text-center">
                                     <div className="h1 mb-3">
                                         <i className="bi bi-bar-chart-steps"></i>
@@ -43,8 +43,9 @@ const Home = () => {
                             </div>
                         </div>
 
+
                         <div className='col-md' >
-                        <div className="card bg-dark text-light">
+                            <div className="card bg-success text-light">
                                 <div className="card-body text-center">
                                     <div className="h1 mb-3">
                                         <i className="bi bi-bookmark-star-fill"></i>
@@ -61,16 +62,126 @@ const Home = () => {
             </section>
 
             <section className="p-5">
-                <div className="container">
-                    <div className="row align-items-center justify-content-between">
-                        <div className="col-md">
-                            
+                <h1>Featured Quizzes</h1>
+                <hr />
+                <div className="row row-cols-1 row-cols-md-3 g-4">
+                    <div className="col">
+                        <div className="card shadow-lg">
+                            <img src="https://yt3.ggpht.com/ytc/AAUvwnjMQg0vNJYMPsEA4X60Oqgj6A_ko4cLP0duHRG0cA=s900-c-k-c0x00ffffff-no-rj"  className="card-img-top" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <span className="badge bg-danger">Highest Rated</span>
+                            </div>
                         </div>
                     </div>
+
+                    <div className="col">
+                        <div className="card shadow-lg">
+                            <img src="https://yt3.ggpht.com/ytc/AAUvwnjMQg0vNJYMPsEA4X60Oqgj6A_ko4cLP0duHRG0cA=s900-c-k-c0x00ffffff-no-rj"  className="card-img-top" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <span className="badge bg-warning">Most Popular</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col">
+                        <div className="card shadow-lg">
+                            <img src="https://yt3.ggpht.com/ytc/AAUvwnjMQg0vNJYMPsEA4X60Oqgj6A_ko4cLP0duHRG0cA=s900-c-k-c0x00ffffff-no-rj"  className="card-img-top" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <span className="badge bg-warning">Most Popular</span>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </section>
 
+            <section className="p-5">
+                <h1>Technology Quizzes</h1>
+                <hr />
+                <div className="row row-cols-1 row-cols-md-3 g-4">
+                <div className="col">
+                        <div className="card shadow-lg">
+                            <img src="https://yt3.ggpht.com/ytc/AAUvwnjMQg0vNJYMPsEA4X60Oqgj6A_ko4cLP0duHRG0cA=s900-c-k-c0x00ffffff-no-rj"  className="card-img-top" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <span className="badge bg-warning">Most Popular</span>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div className="col">
+                        <div className="card shadow-lg">
+                            <img src="https://yt3.ggpht.com/ytc/AAUvwnjMQg0vNJYMPsEA4X60Oqgj6A_ko4cLP0duHRG0cA=s900-c-k-c0x00ffffff-no-rj"  className="card-img-top" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <span className="badge bg-warning">Most Popular</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col">
+                        <div className="card shadow-lg">
+                            <img src="https://yt3.ggpht.com/ytc/AAUvwnjMQg0vNJYMPsEA4X60Oqgj6A_ko4cLP0duHRG0cA=s900-c-k-c0x00ffffff-no-rj"  className="card-img-top" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <span className="badge bg-warning">Most Popular</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </section>
+
+            <section className="p-5">
+                <h1>Celebrity Quizzes</h1>
+                <hr />
+                <div className="row row-cols-1 row-cols-md-3 g-4">
+
+                <div className="col">
+                        <div className="card shadow-lg">
+                            <img src="https://yt3.ggpht.com/ytc/AAUvwnjMQg0vNJYMPsEA4X60Oqgj6A_ko4cLP0duHRG0cA=s900-c-k-c0x00ffffff-no-rj"  className="card-img-top" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <span className="badge bg-warning">Most Popular</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                     <div className="col">
+                        <div className="card shadow-lg">
+                            <img src="https://yt3.ggpht.com/ytc/AAUvwnjMQg0vNJYMPsEA4X60Oqgj6A_ko4cLP0duHRG0cA=s900-c-k-c0x00ffffff-no-rj"  className="card-img-top" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <span className="badge bg-warning">Most Popular</span>
+                            </div>
+                        </div>
+                    </div> 
+                    
+                    <div className="col">
+                        <div className="card shadow-lg">
+                            <img src="https://yt3.ggpht.com/ytc/AAUvwnjMQg0vNJYMPsEA4X60Oqgj6A_ko4cLP0duHRG0cA=s900-c-k-c0x00ffffff-no-rj"  className="card-img-top" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <span className="badge bg-warning">Most Popular</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
 
         </div>
     )

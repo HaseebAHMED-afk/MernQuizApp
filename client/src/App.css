@@ -1,0 +1,13 @@
+a {
+    text-decoration: none !important;
+    color: white !important;
+    transition: all 0.1s ease-in-out !important ;
+}
+
+a:hover{
+    color: rgb(197, 197, 197) !important;
+}
+
+.login-page{
+    height: 100vh;
+}
