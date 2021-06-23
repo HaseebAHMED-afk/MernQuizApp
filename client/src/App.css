@@ -11,3 +11,13 @@ a:hover{
 .login-page{
     height: 100vh;
 }
+
+.login-section{
+    width: 55%;
+}
+
+@media only screen and (max-width:430px){
+    .login-section{
+        width: 100%;
+    }
+}
