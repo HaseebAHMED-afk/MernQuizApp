@@ -16,6 +16,15 @@ a:hover{
     width: 55%;
 }
 
+.or-section{
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    width: 35%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 @media only screen and (max-width:430px){
     .login-section{
         width: 100%;
