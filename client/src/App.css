@@ -29,6 +29,11 @@ a:hover{
     background: #424242;
   }
 
+  .how-it-works-main-heading{
+      margin: 50px auto;
+      text-align: center;
+  }
+
 @media only screen and (max-width:770px){
     .or-section{
         width: 70%;

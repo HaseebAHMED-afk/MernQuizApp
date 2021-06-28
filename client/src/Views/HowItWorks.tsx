@@ -7,7 +7,7 @@ import '../App.css'
 const HowItWorks = () => {
     return (
         <div>
-
+            <h1 className='how-it-works-main-heading' >How It Works</h1>
             <VerticalTimeline
                 className='vertical-timeline-custom-line'
             >
@@ -65,11 +65,8 @@ const HowItWorks = () => {
     date="November 2012"
     iconStyle={{ background: '#212529', color: '#fff' }}
   >
-    <h3 className="vertical-timeline-element-title">Agile Development Scrum Master</h3>
-    <h4 className="vertical-timeline-element-subtitle">Certification</h4>
-    <p>
-      Creative Direction, User Experience, Visual Design
-    </p>
+    <h3 className="vertical-timeline-element-title">Learn more.</h3>
+    <p className="vertical-timeline-element-subtitle">Don't stop.</p>
   </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--education"
@@ -78,11 +75,8 @@ const HowItWorks = () => {
     contentArrowStyle={{ borderRight: '7px solid  #212529' }}
     contentStyle={{ background: '#212529', color: '#fff' }}
   >
-    <h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
-    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
-    <p>
-      Creative Direction, Visual Design
-    </p>
+    <h3 className="vertical-timeline-element-title">Share and Win.</h3>
+    <p className="vertical-timeline-element-subtitle">Get a special badge for inviting 10 people onto our platform.</p>
   </VerticalTimelineElement>
 </VerticalTimeline>
         </div>
