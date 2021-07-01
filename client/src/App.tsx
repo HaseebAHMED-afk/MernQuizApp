@@ -10,6 +10,7 @@ import Register from './Views/Register'
 import ContactUs from './Views/ContactUs'
 import HowItWorks from './Views/HowItWorks'
 import Profile from './Views/Profile'
+import Quiz from './Views/Quiz'
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <PublicRoute path='/how-it-works' component={<HowItWorks />} />
         <PublicRoute path='/contact-us' component={<ContactUs />} />
         <PublicRoute path='/profile' component={<Profile />} />
+        <PublicRoute path='/quiz' component={<Quiz />} />
       </Routes>
       <Footer />
     </div>
