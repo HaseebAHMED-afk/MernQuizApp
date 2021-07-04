@@ -12,29 +12,29 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" color='white' />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className='m-auto' >
-                    <Nav.Link>
-                        <Link to={'/'} >
+                    <Nav.Link  >
+                        <Link to={'/'}  className='link' >
                             
                                 Home
                            
                         </Link>
                         </Nav.Link>
                         <Nav.Link>
-                        <Link to={'/profile'} >
+                        <Link to={'/profile'} className='link' >
                             
                                 You
                             
                         </Link>
                         </Nav.Link>
                         <Nav.Link>
-                        <Link to={'/how-it-works'} >
+                        <Link to={'/how-it-works'} className='link' >
                             
                                 How It Works
                            
                         </Link>
                         </Nav.Link>
                         <Nav.Link>
-                        <Link to={'/contact-us'} >
+                        <Link to={'/contact-us'} className='link' >
                       
                                 Contact Us
                         
