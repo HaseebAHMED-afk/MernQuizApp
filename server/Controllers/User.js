@@ -127,5 +127,21 @@ exports.login = async (req, res) => {
 
 
 exports.verify = async (req,res) =>{
-    
+    const {email , code} = req.body;
+
+    const user = await User.findOne({email: email})
+
+    if(user.verificationCode != code){
+        res.json({
+            status:403,
+            message:"Incorrect code"
+        })
+    }else{
+        let user = await User.findOneAndUpdate({email:email} , {$set:{verifiedAccount: true}} , {new: true});
+
+        res.json({
+            status: 200,
+            message: user
+        })
+    }
 }
