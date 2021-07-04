@@ -2,7 +2,8 @@ const User = require('../Models/Users')
 const bcrypt = require('bcrypt')
 const saltRounds = 10;
 require('dotenv').config()
-const { generateAccessToken } = require('../Utils/jwt')
+const { generateAccessToken } = require('../Utils/jwt');
+const { sendMail } = require('../Utils/nodemailer');
 
 exports.register = async (req, res) => {
 
@@ -16,8 +17,10 @@ exports.register = async (req, res) => {
                 message: "Email already exists. Log in instead."
             })
         } else {
+            let code = Math.floor(Math.random() * 9000)
+
             let newUser = new User({
-                firstName, lastName, email, password, profileUrl
+                firstName, lastName, email, password, profileUrl , verificationCode: code
             })
 
             bcrypt.genSalt(saltRounds, async function (err, salt) {
@@ -27,10 +30,22 @@ exports.register = async (req, res) => {
                     newUser.password = hash
 
                     try {
+
                         let response = await newUser.save()
+                        let mail = {
+                            to: newUser.email,
+                            from:`${process.env.GMAIL_USER}`,
+                            subject:'Confirmation Code for GeekQuiz',
+                            text:`Hello, ${newUser.firstName} ${newUser.lastName} and welcome to GeekQuiz. Your confirmation code for account verification is: ${newUser.verificationCode} `
+                        }
+
+                       let resMail =  sendMail(mail)
+
+                        
                         res.json({
                             status: 200,
-                            message: response
+                            message: response,
+                            mailSent: resMail
                         })
 
                     } catch (error) {
@@ -79,6 +94,7 @@ exports.login = async (req, res) => {
                     } else {
                         if (result == true) {
                         let r = generateAccessToken(user.email , process.env.JWT_TOKEN_SECRET)
+                        let code = Math.floor(Math.random() * 9000)
                             res.json({
                                 status: 200,
                                 message: user,
@@ -110,3 +126,6 @@ exports.login = async (req, res) => {
 }
 
 
+exports.verify = async (req,res) =>{
+    
+}

@@ -20,6 +20,14 @@ const userSchema = new mongoose.Schema({
     profileUrl:{
         type: String,
         requried: true
+    },
+    verifiedAccount:{
+        type: Boolean,
+        default: false
+    },
+    verificationCode:{
+        type: Number,
+        required: true
     }
 })
 
