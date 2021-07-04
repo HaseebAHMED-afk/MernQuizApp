@@ -1,6 +1,8 @@
 const User = require('../Models/Users')
 const bcrypt = require('bcrypt')
 const saltRounds = 10;
+require('dotenv').config()
+const { generateAccessToken } = require('../Utils/jwt')
 
 exports.register = async (req, res) => {
 
@@ -25,7 +27,6 @@ exports.register = async (req, res) => {
                     newUser.password = hash
 
                     try {
-
                         let response = await newUser.save()
                         res.json({
                             status: 200,
@@ -77,9 +78,11 @@ exports.login = async (req, res) => {
                         })
                     } else {
                         if (result == true) {
+                        let r = generateAccessToken(user.email , process.env.JWT_TOKEN_SECRET)
                             res.json({
                                 status: 200,
-                                message: user
+                                message: user,
+                                token: r
                             })
                         } else {
                             res.json({
