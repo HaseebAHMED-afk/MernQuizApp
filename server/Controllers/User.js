@@ -18,40 +18,91 @@ exports.register = async (req, res) => {
                 firstName, lastName, email, password, profileUrl
             })
 
-            bcrypt.genSalt(saltRounds, async function(err, salt) {
+            bcrypt.genSalt(saltRounds, async function (err, salt) {
 
-                bcrypt.hash(password, salt, async function(err, hash) {
+                bcrypt.hash(password, salt, async function (err, hash) {
 
-                   newUser.password = hash
+                    newUser.password = hash
 
-                   try {
+                    try {
 
-                    let response = await newUser.save()
-                    res.json({
-                        status:200,
-                        message: response
-                    })
+                        let response = await newUser.save()
+                        res.json({
+                            status: 200,
+                            message: response
+                        })
 
-                   } catch (error) {
+                    } catch (error) {
 
-                       res.json({
-                           status:400,
-                           message:error
-                       })
+                        res.json({
+                            status: 400,
+                            message: error
+                        })
 
-                   }
+                    }
                 });
             });
 
-           
+
         }
 
     } catch (error) {
-       res.json({
-           status: 500,
-           message: error
-       })
+        res.json({
+            status: 500,
+            message: error
+        })
     }
+
+}
+
+
+exports.login = async (req, res) => {
+
+    let { email, password } = req.body;
+
+    try {
+        let user = await User.findOne({ email: email });
+        if (!user) {
+            res.json({
+                status: 404,
+                message: "Email doesn't exist. You need to register first."
+            })
+        } else {
+            try {
+                bcrypt.compare(password, user.password, async function (err, result) {
+                    if (err) {
+                        res.json({
+                            status: 403,
+                            message: err
+                        })
+                    } else {
+                        if (result == true) {
+                            res.json({
+                                status: 200,
+                                message: user
+                            })
+                        } else {
+                            res.json({
+                                status: 401,
+                                message: 'Incorrect Password'
+                            })
+                        }
+                    }
+                })
+            } catch (error) {
+                res.json({
+                    status: 403,
+                    message: error
+                })
+            }
+        }
+    } catch (error) {
+        res.json({
+            status: 500,
+            message: error
+        })
+    }
+
 
 }
 
