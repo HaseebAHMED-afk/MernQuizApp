@@ -1,6 +1,8 @@
 const User = require('../Models/Users')
+const bcrypt = require('bcrypt')
+const saltRounds = 10;
 
-exports.registerUser = async (req, res) => {
+exports.register = async (req, res) => {
 
     const { firstName, lastName, email, password, profileUrl } = req.body;
 
@@ -16,12 +18,32 @@ exports.registerUser = async (req, res) => {
                 firstName, lastName, email, password, profileUrl
             })
 
-            let response = await newUser.save()
+            bcrypt.genSalt(saltRounds, async function(err, salt) {
 
-            res.json({
-                status:200,
-                message: response
-            })
+                bcrypt.hash(password, salt, async function(err, hash) {
+
+                   newUser.password = hash
+
+                   try {
+
+                    let response = await newUser.save()
+                    res.json({
+                        status:200,
+                        message: response
+                    })
+
+                   } catch (error) {
+
+                       res.json({
+                           status:400,
+                           message:error
+                       })
+
+                   }
+                });
+            });
+
+           
         }
 
     } catch (error) {
@@ -32,4 +54,5 @@ exports.registerUser = async (req, res) => {
     }
 
 }
+
 
