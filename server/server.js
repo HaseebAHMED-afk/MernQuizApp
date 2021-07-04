@@ -6,8 +6,13 @@ require('dotenv').config()
 const app = express();
 
 app.use(cors())
+app.use(express.json())
 
 connectDB()
+
+const userRouter = require('./Routes/User')
+
+app.use('/user' , userRouter)
 
 
 app.listen(process.env.PORT || 5000 , ()=>{

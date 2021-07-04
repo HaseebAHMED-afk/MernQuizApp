@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const connectDB = async ()=> {
     try {
-        const conn = await mongoose.connect('mongodb://localhost:27017/expensetrackerDB',{
+        const conn = await mongoose.connect('mongodb://localhost:27017/geekQuizDB',{
             useCreateIndex:true,
             useNewUrlParser:true,
             useUnifiedTopology:true
