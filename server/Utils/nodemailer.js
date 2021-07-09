@@ -14,9 +14,9 @@ exports.sendMail = async (mail) =>{
 
     try {
         let response = await smtpTransport.sendMail(mail)
-        return 1
+        return response
     } catch (error) {
-        return 0
+        return error
     }
    
 }

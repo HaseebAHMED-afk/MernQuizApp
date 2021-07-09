@@ -11,6 +11,8 @@ import ContactUs from './Views/ContactUs'
 import HowItWorks from './Views/HowItWorks'
 import Profile from './Views/Profile'
 import Quiz from './Views/Quiz'
+import Verify from './Views/Verify'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (
@@ -24,6 +26,7 @@ const App = () => {
         <PublicRoute path='/contact-us' component={<ContactUs />} />
         <PublicRoute path='/profile' component={<Profile />} />
         <PublicRoute path='/quiz' component={<Quiz />} />
+        <PublicRoute path='/verify' component={<Verify />} />
       </Routes>
       <Footer />
     </div>

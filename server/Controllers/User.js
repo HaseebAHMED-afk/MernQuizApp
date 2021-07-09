@@ -32,14 +32,14 @@ exports.register = async (req, res) => {
                     try {
 
                         let response = await newUser.save()
+                        
                         let mail = {
                             to: newUser.email,
                             from:`${process.env.GMAIL_USER}`,
-                            subject:'Confirmation Code for GeekQuiz',
                             text:`Hello, ${newUser.firstName} ${newUser.lastName} and welcome to GeekQuiz. Your confirmation code for account verification is: ${newUser.verificationCode} `
                         }
 
-                       let resMail =  sendMail(mail)
+                       let resMail = await  sendMail(mail)
 
                         
                         res.json({

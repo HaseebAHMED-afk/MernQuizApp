@@ -8,7 +8,7 @@ a:hover{
     color: rgb(197, 197, 197) !important;
 }
 
-.login-page{
+.login-page, .verify{
     height: 100vh;
 }
 
